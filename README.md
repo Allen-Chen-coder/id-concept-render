@@ -50,7 +50,23 @@
 
 ## 快速开始
 
-**Kimi Work**：把整个仓库克隆/下载到 skills 目录即可：
+### 一键安装（推荐）
+
+**macOS / Linux / Git Bash** — 自动探测 Kimi Work、Claude Code、Cursor 的 skills 目录：
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Allen-Chen-coder/id-concept-render/main/install.sh | bash
+```
+
+**Windows PowerShell** — 自动探测，没有 git 也能装（自动回退 ZIP 下载）：
+
+```powershell
+irm https://raw.githubusercontent.com/Allen-Chen-coder/id-concept-render/main/install.ps1 | iex
+```
+
+### 手动安装
+
+**Kimi Work**：
 
 ```bash
 git clone https://github.com/Allen-Chen-coder/id-concept-render.git \
