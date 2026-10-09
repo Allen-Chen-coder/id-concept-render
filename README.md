@@ -39,6 +39,7 @@
 | `references/accuracy.md` | 六类翻车模式对策、结构错误强检清单、保真清单 |
 | `references/innovation.md` | 四层面创新方法库 + 方向描述模板 |
 | `references/cost-dfm.md` | 工艺成本阶梯、按售价倒推外壳预算、低成本高级感手段、穿戴产品专项 |
+| `references/intake-questions.md` | 渐进式需求访谈剧本：5 轮 13 个选项式问题，专治"不知道怎么说" |
 
 ## 示例输出
 
