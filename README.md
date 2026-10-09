@@ -51,30 +51,47 @@
 
 ## 快速开始
 
-### 一键安装（推荐）
+按你用的 AI 类型选一条路径：
 
-**macOS / Linux / Git Bash** — 自动探测 Kimi Work、Claude Code、Cursor 的 skills 目录：
+### A. 命令行 AI 一键安装（Codex / Claude Code / Cursor / Kimi Work）
 
-```bash
-curl -fsSL https://raw.githubusercontent.com/Allen-Chen-coder/id-concept-render/main/install.sh | bash
-```
+让 AI 自己装——直接把下面这句发给它：
 
-**Windows PowerShell** — 自动探测，没有 git 也能装（自动回退 ZIP 下载）：
+> 执行这条命令帮我安装一个 skill：`curl -fsSL https://raw.githubusercontent.com/Allen-Chen-coder/id-concept-render/main/install.sh | bash`（Windows PowerShell 用 `irm https://raw.githubusercontent.com/Allen-Chen-coder/id-concept-render/main/install.ps1 | iex`）
 
-```powershell
-irm https://raw.githubusercontent.com/Allen-Chen-coder/id-concept-render/main/install.ps1 | iex
-```
+脚本会自动探测 Kimi Work、Claude Code、Cursor 的 skills 目录，装完即可用。也可以自己在终端跑这两条命令，效果相同。
 
-### 手动安装
-
-**Kimi Work**：
+### B. 命令行 AI 手动安装
 
 ```bash
-git clone https://github.com/Allen-Chen-coder/id-concept-render.git \
-  "%APPDATA%\kimi-desktop\daimon-share\daimon\skills\id-concept-render"
+git clone https://github.com/Allen-Chen-coder/id-concept-render.git
 ```
 
-**Claude Code / Cursor / 其他 Agent**：放入对应的 skills 目录（如 `~/.claude/skills/`、`.agents/skills/`），或直接把这个仓库的文件放进任何 Agent 的 context 里说"按这个 SKILL.md 执行"。
+然后把文件夹放进 AI 的 skills 目录：
+
+| AI | skills 目录 |
+|---|---|
+| Kimi Work（Windows） | `%APPDATA%\kimi-desktop\daimon-share\daimon\skills\` |
+| Kimi Work（macOS） | `~/Library/Application Support/kimi-desktop/daimon-share/daimon/skills/` |
+| Claude Code | `~/.claude/skills/` |
+| Cursor | `~/.cursor/skills/` |
+| 其他 Agent | `~/.config/agents/skills/` 或项目内 `.agents/skills/` |
+
+### C. 网页版 AI 免安装（Gemini / ChatGPT / Kimi 网页版等）
+
+网页 AI 不能跑本地命令，直接把 skill 文件喂给它：
+
+1. **下载**：仓库首页 → 绿色 `Code` 按钮 → `Download ZIP`，解压得到 `id-concept-render-main` 文件夹
+2. **上传**：新开一个对话，把 `SKILL.md` 和 `references/` 下的全部 7 个 `.md` 文件一起上传（Gemini / ChatGPT 都支持多文件上传；文件太多可分两批）
+3. **发指令**：
+
+   > 请完整阅读 SKILL.md，它是你的工作流程说明书；references 文件夹里的 7 个 md 是它的配套参考资料。从现在起，我让你生成产品概念渲染图时，请严格按 SKILL.md 的流程执行，需要参考资料时优先从你已读到的内容里取。读完请只回复"已就绪"。
+
+4. **之后正常使用**：直接描述你的产品需求即可，它会先走提问/确认流程再出图
+
+**进阶（Gemini 用户）**：把第 3 步的内容粘进 [Gems](https://gemini.google.com/gems) 的自定义指令里，references 按需贴入，skill 就永久生效，不用每次上传。
+
+> ⚠️ 注意：网页版 AI 的出图能力取决于平台本身（Gemini 可直接生图，ChatGPT 需有图像生成权限）；SKILL.md 中的评审迭代方法在任何能出图的 AI 上都有效。
 
 然后直接说：
 
@@ -100,4 +117,4 @@ git clone https://github.com/Allen-Chen-coder/id-concept-render.git \
 
 ---
 
-**English summary**: A universal `SKILL.md` package that fixes ugly AI-generated product concept renders. It enforces a six-step workflow — brief deconstruction with guided questions, form-language-first direction, six-layer prompt construction, batch generation, rubric-scored review loops, and structured innovation variants — backed by 36 category-sorted design exemplars, cost/DFM constraints for mass production, and a library of negative-constraint phrases. Works with any agent that loads SKILL.md skills (Kimi Work, Claude Code, Cursor, …).
+**English summary**: A universal `SKILL.md` package that fixes ugly AI-generated product concept renders. It enforces a six-step workflow — brief deconstruction with guided questions, form-language-first direction, six-layer prompt construction, batch generation, rubric-scored review loops, and structured innovation variants — backed by 36 category-sorted design exemplars, cost/DFM constraints for mass production, and a library of negative-constraint phrases. Works with any agent that loads SKILL.md skills (Kimi Work, Claude Code, Cursor, …), and with web-based AIs (Gemini, ChatGPT) by uploading the files directly.
