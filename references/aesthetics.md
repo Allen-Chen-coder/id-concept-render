@@ -87,3 +87,58 @@
 - 无印良品系：`MUJI-like quiet restraint, unassuming material honesty`
 
 一次只锚一个，且放在渲染风格层而非形态层，避免直接复刻。
+
+---
+
+# English Version
+
+> Used in Step 2 "set aesthetic direction". Goal: translate "good-looking" into concrete vocabulary that can go into a prompt.
+
+## I. Why AI renders look "ugly": three typical causes
+
+1. **No form language**: the prompt only has "modern / sleek / premium", so the model outputs the most average consumer-electronics face from its training data.
+2. **Visual elements fight each other**: rounded corners mixed with sharp edges, matte next to gloss with no logic, more than 3 colors — the image loses unity.
+3. **No hierarchy**: every surface treated equally, no visual focus. (One strongest feature + restrained secondary features = premium feel.)
+
+**Prescription**: lock 1 primary + at most 1 secondary form language per concept; CMF follows "≤2 main colors + ≤1 accent + ≤2 materials"; define one visual focal point.
+
+## II. Form-language library
+
+Each entry: core vocabulary (paste into prompts), product temperament, suitable categories, risks.
+
+1. **Soft Minimalism** — `seamless unibody, rounded continuous surfaces, monolithic volume, soft-touch matte finish, recessed details, no visible screws`. Quiet, trustworthy, home-friendly. For home electronics, personal care, consumer medical. Risk: easily mediocre — add one memory point (a parting line, a material collision).
+2. **Neo-Futurism** — `sculpted aerodynamic surfaces, parametric texture, floating layered volumes, ambient light accents, dark chrome accents`. High performance, tech leadership. For gaming, AI hardware, mobility. Risk: collapses into "black + RGB"; keep light strips to one spot.
+3. **Retro-Futurism / Neo-Retro** — `retro-futuristic, warm off-white and orange accents, tactile chunky buttons, brushed aluminum, Kodachrome product photography vibe`. Friendly, nostalgic, function-visible. For audio, small appliances, tools. Risk: over-distressing looks cheap; materials must be real (brushed aluminum, knurled knobs).
+4. **Organic Fluidity** — `soft liquid-like forms, pebble-inspired silhouette, translucent gradient shell, biomimetic curves`. Gentle, human, female-friendly. For baby, health, fragrance/personal care. Risk: formless mush — anchor with one "hard" element (metal ring, glass panel).
+5. **Precision Instrument** — `machined aluminum unibody, knurled knobs, precise chamfered edges, anodized finish, technical engraving, visible mechanical structure`. Professional, reliable, tool-like. For camera accessories, pro audio, measuring tools. Risk: detail overload reads messy; details serve functions.
+6. **Architectural Monolith** — `bold geometric volumes, strong cantilever, tension between mass and void, split-line as graphic element, stone-like matte texture`. Premium home, art-object vibe. For speakers, smart-home hubs, monitor stands. Risk: mass needs light and shadow; render with a single strong key light.
+7. **Transparent Tech** — `transparent smoked shell revealing internal structure, visible circuit board as aesthetic, gradient tinted acrylic, internal components arranged compositionally`. Engineering confidence, geek aesthetic. For audio, desktop devices, chargers. Risk: internal wiring chaos — require `internal components neatly arranged, cable-managed`.
+
+**Combination rule**: primary language drives 70% of form decisions; secondary contributes only 1–2 accent features (e.g. soft-minimalist body + knurled knob from Precision Instrument). Never pair two strong languages (Neo-Futurism + Architectural Monolith will fight).
+
+## III. Common traits of award-level products (iF / Red Dot / IDEA shortlists)
+
+1. **One clear concept sentence**: the whole design can be stated in one line ("a floating disk"). Write this sentence first and put it at the core of the prompt.
+2. **Parting lines as graphics**: seams and snap lines are part of the composition (e.g. a CNC highlight edge on a unibody).
+3. **Material collisions with logic**: soft/hard, matte/gloss, warm/cold — collisions express functional zoning (soft grip zone, hard display zone).
+4. **Decreasing detail density**: finest details at the focal point, simpler further away — specify `fine details concentrated on [focal part]`.
+5. **Color restraint exception**: high-saturation multi-color only for kids, sports, or tools.
+
+## IV. CMF principles
+
+- **Color formula**: 1–2 main (large shell areas) + 1 accent (button, light, logo area) + neutrals (black/white/gray buffer). Give ratios in prompts, e.g. `90% matte warm gray, 8% dark graphite, 2% amber accent`.
+- **Material as information**: grip zones = soft (silicone, fabric, soft-touch paint); interaction zones = hard (glass, metal, acrylic); structure zones = engineering feel (PC+ABS, bare aluminum).
+- **Premium keywords**: `fine grain matte texture, tight parting lines, consistent surface quality, subtle anodized hue`. Cheapness sources: `glossy plastic, oversaturated color, visible draft lines, uneven gaps` — usable as negative constraints.
+- **On-screen text**: consumer screens default to `minimal clean UI with no readable text` (generated text is almost always garbled).
+
+## V. Benchmark anchors
+
+Without reference images, anchor the desired design temperament with one line (not copying form — anchoring finish level). Look up exemplars by product category in `design-exemplars.md`. Quick cross-category anchors:
+
+- Apple-tier finish: `Apple-level fit and finish, seamless assembly`
+- Dyson-tier engineering: `Dyson-like engineering precision, exposed functional structure`
+- Teenage Engineering: `Teenage Engineering playfulness, flat colors, graphic buttons`
+- Scandinavian home: `Bang & Olufsen sculptural elegance, aluminum and fabric`
+- MUJI: `MUJI-like quiet restraint, unassuming material honesty`
+
+Anchor only one at a time, placed in the render-style layer (layer 5), not the form layer, to avoid direct replication.

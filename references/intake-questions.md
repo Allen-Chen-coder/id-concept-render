@@ -119,3 +119,120 @@ D. 装在别的东西上的（配件/模块类）
 - 用户坚持要屏幕上显示具体文字/界面 → 告知生成模型文字必乱码，界面内容后期排版叠加。
 - 用户说不出使用场景 → 回到 Q2 重问，场景缺失会导致调性判断全部失效。
 - 用户要买给"所有人用" → 追问最主要的一类使用者；无目标用户 = 无审美方向。
+
+---
+
+# English Version
+
+> Progressive intake interview: turns "I can't articulate it" into an actionable brief. Target users: people who know they want a product but don't know which dimensions to consider, don't know design vocabulary, and don't know where to start.
+> Usage: interview in rounds, **max 3 questions per round**, all multiple-choice (the user can answer with letters), skip dimensions already answered. If the user says "stop asking / you decide", immediately adopt defaults, state assumptions, and continue.
+
+## I. General rules
+
+1. **Max 3 questions per round**: too much information at once makes users give up. One small step at a time.
+2. **Always offer options**: users don't know design vocabulary — the options ARE the vocabulary. Mark the recommended default with 🌟.
+3. **Skipping is allowed**: "not important / you decide" → record it as an assumption, don't press.
+4. **Backtracking is allowed**: if the user says "just render it" at any point → stop asking, list all assumptions, and go straight to Step 2 of SKILL.md.
+5. **Two-step confirmation at the end**: after the interview, run SKILL.md Step 1.5 (play back + open-ended supplement), then issue the ≤6-line confirmation sheet (Step 1.6) for a yes/no — the last defense against misunderstanding.
+6. **If the user already covered a question, skip it.** Don't mechanically walk the whole script.
+
+## II. Interview flow
+
+### Round 0 · Icebreaker (1 question)
+
+> **Q0**: What kind of product do you want to make? One sentence: "what it is + who it's for + what problem it solves" is enough — incomplete is fine.
+> Example answers: "a pill-reminder box for seniors", "a recording badge handed out to staff".
+
+If the user can't produce even one sentence → switch to multiple choice: **Which of these is it closest to?**
+A. Worn on the body (badge / wristband / pendant)
+B. Held in the hand (tool / remote / small appliance)
+C. Sits on a desk or at home (desktop device / home hardware)
+D. Mounted onto something else (accessory / module)
+
+### Round 1 · Usage mode & scenario (2 questions)
+
+> **Q1**: How is it used / where is it carried? (Decides form and fastening mechanism — the question that most affects appearance)
+> A. Clipped / hung on part of the body (collar / pocket / bag strap)
+> B. Worn on wrist / finger
+> C. Held in one hand
+> D. Fixed on a desk / wall / vehicle
+> E. Embedded into another device
+>
+> **Q2**: Where is it mainly used? (Decides tone and material tier)
+> A. Office / business settings (must look professional and steady)
+> B. Everyday home use (must feel warm and friendly)
+> C. Outdoor / sports (must be rugged and visible)
+> D. Storefront / service floor (must be instantly readable and dirt-resistant)
+> E. Medical / health settings (must feel clean and trustworthy)
+
+### Round 2 · Structures & interaction (2–3 questions, the most important round)
+
+> **Q3**: What "visible things" must the surface have? (Name them one by one to prevent the model from adding its own)
+> Confirm each: buttons (how many?) / indicator light or screen (needed? shows what?) / ports (charging?) / speaker or mic holes / any other must-expose structure
+> Follow-up template: "Should users be able to see recording status at a glance? → then it needs a light."
+>
+> **Q4**: How does the user operate it? (Decides interaction-part position and size)
+> A. One physical button does everything (simplest) 🌟
+> B. Buttons + light feedback
+> C. Buttons + screen display
+> D. Touch / swipe
+> E. Barely any operation — works automatically
+>
+> **Q5** (optional): Anything that must NEVER appear? (Taboo list)
+
+### Round 3 · Audience & tone (2 questions)
+
+> **Q6**: Who buys it, who uses it? (When buyer ≠ user, ask twice — e.g. a boss buying for staff to wear)
+> A. Enterprise bulk purchase (B2B: cost-sensitive, business look, no flashiness)
+> B. Individual consumers buying for themselves (C-end: can be more personal and emotional)
+> C. A tool for professionals (price matters less; needs precision feel)
+>
+> **Q7**: What should it feel like at first glance? (Translates abstract taste into options)
+> A. Minimal, quiet, unobtrusive 🌟
+> B. Techy, futuristic
+> C. Warm, friendly, like a home product
+> D. Precise, professional, like an instrument
+> E. Retro, nostalgic
+> (After the answer, add: "I'll pick reference designs along this direction.")
+
+### Round 4 · Cost & feasibility (1–2 questions)
+
+> **Q8**: What price tier / per-unit budget for bulk purchase? (Decides casing process tier — see cost-dfm.md)
+> A. High-volume budget product (under ¥100) → injection-molded shell, texture-driven quality
+> B. Mid-range mainstream (hundreds of yuan) 🌟 → injection molding + one metal accent
+> C. Premium (¥1000+) → metal / special processes allowed
+>
+> **Q9** (optional): Any brand color requirements or preferences for the shell? If none, offer 2–3 safe business colors.
+
+### Round 5 · Output & confirmation (1 question + confirmation sheet)
+
+> **Q10**: One deep-dive version first, or 2–3 contrasting directions up front?
+> A. One version, deep-dive 🌟  B. Multi-direction comparison
+
+Then run SKILL.md Step 1.5 (play back + open supplement); after integrating supplements, issue the **confirmation sheet** — SKILL.md Step 1.6 — in the fixed 6-line format (product one-liner / audience & scenario / must-have structures / taboos / plain-language tone / cost tier & output), ending with exactly one question:
+
+> "Anything to change? If not, I'll render the first version."
+
+When the user flags issues: **change only the flagged lines**, re-issue, and re-confirm. No prompts and no rendering until confirmation passes. Only after confirmation, go to Step 2.
+
+### Early-exit conditions
+
+- User says "just render / stop asking" at any time → stop, but still pass through Step 1.6: assumptions list + quick confirmation (Step 1.5 supplement may be skipped; unless the user waives confirmation too).
+- User already provided a PRD or detailed description → skip the interview; deconstruct → Step 1.5 supplement → Step 1.6 confirm.
+
+## III. Response playbook
+
+| User says | You reply |
+|---|---|
+| "Either is fine / whatever" | "Then I'll go with the most common option: A. Shout anytime if that's wrong." (Give a default; don't ask back) |
+| "I don't know design" | "You don't need to. Just answer the usage questions; I'll handle the design vocabulary." |
+| "Make it look good" | "'Good-looking' has directions. Minimal & quiet / techy / warm & friendly / precise-instrument / retro — which is closest to what you want?" (Never accept "good-looking" as a final answer; force a second localization) |
+| "Like Apple" | Record benchmark anchor = Apple, then ask: "Which aspect — clean silhouette / metal feel / no extra details?" (Anchor specific traits; don't replicate) |
+| "Make it more innovative" | "Innovation, sure — but first the boundary: it must still be recognizable as a [category] at first glance, OK?" (Prevent innovation from killing the category anchor) |
+
+## IV. Red flags (be alert when you hear these)
+
+- User demands "the more functions the better" → push back with accuracy.md failure mode #5: more structures mean messier AI renders.
+- User insists on specific text/UI on a screen → generated text is always garbled; UI content must be composited later.
+- User can't name a usage scenario → re-ask Q2; without a scenario, every tone judgment fails.
+- User says it's for "everyone" → press for the single primary user type; no target user = no aesthetic direction.

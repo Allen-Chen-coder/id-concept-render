@@ -58,3 +58,58 @@
 > 方向 B：把音箱从惯例的方盒改为"对半切开的卵石"形态（形态层，类比迁移）。
 > 熟悉感由织物网罩和正面单元布局保留，一眼仍是音箱；
 > 半切平面作为桌面接触面，重心逻辑成立。风险是过于雕塑感，用织物材质拉住家居属性。
+
+---
+
+# English Version
+
+> Used in Step 6. Goal: produce differentiated, memorable directions while keeping usability — not making the product weird.
+
+## I. Innovation boundaries
+
+- Innovation ≠ weird. Test: **does the difference serve a function or an emotional narrative?** If you can't name what a novelty is for, cut it.
+- Change one layer at a time; keep the rest familiar (70% familiar + 30% novel = acceptable innovation).
+- The category anchor must survive: however innovative, the product must be recognizable within 3 seconds (an innovative water bottle must still read as a bottle).
+
+## II. Form-layer methods
+
+| Method | How | Prompt entry |
+|---|---|---|
+| Analogy transfer | Replace the category's conventional form with a classic form from another domain | `speaker shaped like a river pebble split in half` |
+| Geometric conflict | One dominant geometry + one alien geometry invading/cutting it | `pure cube body pierced by one organic tubular handle` |
+| Posture reconstruction | Change the category's default posture (stand→lie, flat→tilt, whole→folded) | `monitor that leans back at 15 degrees like a drafting table` |
+| Negative space | Let the "void" become the form | `handle formed by the void between two parallel volumes` |
+| Proportion provocation | Enlarge one part to an unconventional scale as the memory point | `oversized knurled knob dominating 40% of the top face` |
+
+## III. CMF-layer methods
+
+| Method | How | Prompt entry |
+|---|---|---|
+| Unconventional material | Category-default plastic → cork / fabric / ceramic / recycled | `cork composite shell with ceramic top` |
+| Material narrative | Collision expresses a narrative like "nature × tech" | `rough stone-textured base, precision glass display floating above it` |
+| Process visibility | Turn process marks (CNC paths, flow lines, weave) into decoration | `visible CNC tool paths as surface pattern, anodized titanium` |
+| Color strategy | Reverse usage: tools in home colors, home products in tool colors | `laptop stand in soft lavender with surgical matte finish` |
+| Translucent layering | Build depth through transparency | `gradient translucent shell fading from smoked to clear, revealing one neatly arranged internal ribbon cable` |
+
+## IV. Structure & interaction methods
+
+| Method | How | Prompt entry |
+|---|---|---|
+| Function visibility | Externalize internal mechanisms as design features | `exposed mechanical gear train driving the volume dial` |
+| Interaction relocation | Move interaction away from convention and justify it | `touch controls relocated to the detachable top cap` |
+| Dual-use part | One part serves as both structure and interaction | `the carry handle doubles as the pitch bend wheel` |
+| Deploy/fold drama | Dramatic transformation between use and storage | `folds flat to 12mm, deploys into a tripod via one origami-like motion` |
+| Screenless | Physical feedback replaces screens | `no screen; state communicated through color-changing fabric sleeve` |
+
+## V. Direction-pitch template
+
+Before rendering each direction, describe it in 3 sentences (and put it at the top of that direction's prompt):
+
+1. **What changes**: this direction changes X to Y at the [form/CMF/structure/interaction] layer.
+2. **Why it works**: the change serves [functional logic / emotional narrative]; familiarity is preserved by Z.
+3. **Risk**: it may be too [avant-garde / childish / engineering-heavy]; held in check by [some constraint].
+
+Example:
+> Direction B: the speaker changes from the conventional box to a "pebble split in half" (form layer, analogy transfer).
+> Familiarity is preserved by the fabric grille and front driver layout — still reads as a speaker at a glance;
+> the flat cut face serves as the desktop contact, so the center-of-gravity logic holds. Risk: too sculptural; pulled back by fabric toward home-product territory.

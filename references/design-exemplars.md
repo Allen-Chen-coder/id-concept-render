@@ -115,3 +115,111 @@
 2. **跨品类迁移是创新来源**：把 A 品类的典范语言迁到 B 品类（如把出行设备的灯语迁移到随身录音设备的光环缝），就是 innovation.md 的"类比迁移"法，迁移后要过一遍品类常识约束。
 3. **典范也有成本档位**：Leica/Oura 是高端档锚点，给 B 端低成本产品锚定时，只取"设计语言"不取"工艺"（取其形态秩序，用 cost-dfm.md 的低成本 CMF 落地）。
 4. 本库未覆盖的品类：按相邻品类借锚 + 品类常识自行推导，并把新典范补回本文件（迭代原则）。
+
+---
+
+# English Version
+
+> Used in Step 2. Find your product's category below, pick 1–2 exemplars as **benchmark anchors** for prompt layer 5 (render style), or as migration sources for Step 6 innovation. Each entry gives a copy-ready prompt phrase.
+> How to use: category common sense tells you the category's "form constraints and CMF conventions"; exemplars tell you "what the ceiling of this category looks like".
+
+## 1. Wearables & carry-ons (clip / wristband / watch / ring / recorder)
+
+**Category common sense**: weight is the first constraint (clip-on <20 g, wrist-worn <30 g); contact surfaces must be smooth; fastening mechanisms must be believable; lights go through light-guides/rings, never bare LEDs; CMF convention is "matte shell + one metal or fabric touch point".
+
+| Exemplar | Why it's canonical | Migratable prompt phrase |
+|---|---|---|
+| Apple Watch (aluminum) | Unibody aluminum + digital crown: "precision instrument" shrunk to the wrist; the crown is the form memory point | `seamless aluminum unibody, knurled digital crown as the hero detail` |
+| Oura Ring | Seamless titanium pebble ring: sensors hidden in jewelry form — the extreme of "imperceptible wear" is making the user forget the device | `seamless aerospace-titanium pebble form, jewelry-like finish, sensor invisibility` |
+| Plaud Note (AI card recorder) | Credit-card-thin body + magnetic clip: recording devices break the "pen" convention; businesslike and unobtrusive | `credit-card-thin slab, magnetic clip, discreet business tool` |
+| iFlytek H1 recorder series | Metal body + integrated collar clip: the business paradigm of Chinese B2B recording hardware; clear button/light semantics | `machined metal body, integrated collar clip, clear record-button and LED semantics` |
+| Whoop 4.0 (screenless band) | Dropping the screen entirely: all info lives in the app, the device returns to purity | `screenless minimal band module, fabric strap, no display at all` |
+
+## 2. Audio (speakers / headphones / microphones)
+
+**Common sense**: speaker grilles are the category's "face" — the hole pattern IS brand language; material collisions (metal × fabric, wood × aluminum) are the standard premium move; knobs/buttons must suggest damping.
+
+| Exemplar | Why canonical | Prompt phrase |
+|---|---|---|
+| Bang & Olufsen Beosound series | Anodized shell + precision-drilled grille: acoustic openings turned into decorative graphics — process as design | `anodized aluminum shell with precision-drilled acoustic perforation pattern` |
+| Teenage Engineering OP-1 / OB-4 | Flat graphic design + knobs as composition: function visibility balanced on the edge of toy-like | `flat graphic design, colorful knobs as composition elements, playful precision` |
+| Apple AirPods Max | Anodized cups × knit headband: two materials saying different things (durability × comfort) | `anodized aluminum ear cups contrasted with woven knit headband` |
+| Marshall speakers | Vinyl leather + brass knobs + script logo: a complete retro-futurist narrative | `black vinyl leather texture, brass control knobs, retro-futuristic amp aesthetic` |
+| Sony WF-1000XM5 earbuds | Recycled plastic with fine matte texture: cheap material held up by texture and form | `fine matte texture on recycled plastic, pebble-like earbuds` |
+
+## 3. Desktop 3C accessories (chargers / mouse / keyboard / storage)
+
+**Common sense**: small desk items win on "silhouette + surface quality"; consumer white-appliance feel vs pro graphite-metal feel are the two divides; hidden cables/ports are default.
+
+| Exemplar | Why canonical | Prompt phrase |
+|---|---|---|
+| Apple Magic Trackpad / Mouse | White top + aluminum base dual-material language; silhouette controlled by exact corner radii | `white matte top with precision aluminum base, exact corner radii` |
+| Anker Prime chargers | Matte black + one small display: one "functional accent" on a minimal silhouette | `matte graphite shell with one small functional display as accent` |
+| Native Union cables | Braided fabric + metal weight: consumables turned into desk objects | `braided fabric cable with weighted aluminum dock` |
+| LaCie (Neil Poulton HDDs) | Aluminum rim wrapping a silicone core: protection structure fused with appearance | `aluminum rim wrapping a soft silicone core, rugged elegance` |
+| Logitech MX series | Graphite business language + ergonomic sculpting: the aesthetic safe card for B2B office gear | `graphite gray business aesthetic, ergonomic sculptural surfaces` |
+
+## 4. Small appliances & personal care (dryer / shaver / toothbrush / coffee)
+
+**Common sense**: functional structures (airflow, water paths) can become the form itself (the Dyson paradigm); handhelds need clear grip zones and center of gravity; personal care allows softer colors.
+
+| Exemplar | Why canonical | Prompt phrase |
+|---|---|---|
+| Dyson Supersonic | Hollow annular airflow head = function visibility: slim handle, motor in the handle, form follows engineering | `hollow annular airflow head, engineering-driven form` |
+| Braun shavers (Rams tradition) | Geometric order + textured zones: every face has a clear functional owner | `geometric order, textured grip zones, Dieter Rams discipline` |
+| BALMUDA kettle / toaster | Restrained geometry + single material: premium home feel with the fewest elements | `restrained geometry, single-material honesty, quiet premium` |
+| Oral-B iO toothbrush | Monolithic rounded body + status light ring: interaction light made part of the form | `monolithic rounded body, light ring integrated at the neck` |
+| Nespresso (minimal line) | Cantilever + cup-zone negative space: sculptural treatment of a small appliance | `cantilevered brew head, sculpted negative space for the cup` |
+
+## 5. Home hardware (speakers / thermostat / lock / camera)
+
+**Common sense**: home devices are "electronic furniture" — materials must coexist with wood/fabric; for lights, the light IS the body; the more permanent the device, the more the "electronics feel" should fade.
+
+| Exemplar | Why canonical | Prompt phrase |
+|---|---|---|
+| Google Nest Thermostat | Round glass face + rotating metal ring: a thermostat becomes wall decor | `circular glass face with rotating metal ring` |
+| B&O Beoplay A9 / Balance | Sculptural geometry + fabric/wood legs: a speaker that is furniture first | `sculptural geometric speaker, fabric front, wooden legs` |
+| MUJI aroma diffuser (Naoto Fukasawa school) | Frosted white cylinder + mist: material honesty + atmosphere | `frosted white cylinder, soft diffused mist glow` |
+| Smart locks (Xiaomi / Lockin) | Monolithic dark-glass panel + hidden keypad: all lock complexity folded into one face | `monolithic dark glass panel, keypad hidden until lit` |
+| Nanoleaf / Philips Hue | Light as form: hardware retreats, the effect becomes the design | `light as the primary form, minimal visible hardware` |
+
+## 6. Medical & health (BP monitor / scale / hearing aid / monitoring)
+
+**Common sense**: "medical = white + rounded corners + soft grip" is being broken; modern consumer-medical design moves toward "lifestyle product", but colors must stay more restrained than consumer electronics.
+
+| Exemplar | Why canonical | Prompt phrase |
+|---|---|---|
+| Omron upper-arm BP monitor | Clean white rounded monolith + integrated cuff storage: the affinity template for medical devices | `clean white rounded monolith, integrated fabric cuff storage` |
+| Withings scales / watches | Glass + slim metal ring: medical data in a lifestyle shell | `tempered glass with slim metal ring, lifestyle-medical hybrid` |
+| Signia Styletto hearing aid | Slim as a Bluetooth earpiece: turns "hearing aid stigma" into a fashion accessory | `slim earpiece form factor, fashion-accessory finish` |
+| Yuwell home nebulizer (consumer line) | Soft rounded body + integrated handle: gentleness for home scenarios | `soft rounded body, integrated carry handle, friendly medical` |
+
+## 7. Tools & instruments (laser measure / multimeter / power tool / camera)
+
+**Common sense**: a tool's language is "trustworthiness" — rugged materials, big buttons, color conventions (yellow = measurement, blue = Bosch, red = Milwaukee); precision instruments allow high detail density.
+
+| Exemplar | Why canonical | Prompt phrase |
+|---|---|---|
+| Leica M cameras | Brass top plate + leatherette + machined dials: the eternal paradigm of precision instruments | `brass top plate, leatherette grip, precision machined dials` |
+| Leica Disto laser measure | Yellow-black engineering colors + one-hand wedge: colorway as category language | `iconic yellow-black engineering colorway, one-hand wedge form` |
+| Fluke multimeters | Yellow-gray rubber holster + big rotary selector: protection fused with grip | `yellow-gray protective rubber holster, large rotary selector` |
+| Bosch 12V tool family | Unified blue-black language + soft-grip zones: the system feel of a product family | `consistent blue-black family language, soft-grip zones` |
+| Teenage Engineering field series | Aluminum extrusion + single orange accent: instruments as objects of desire | `anodized aluminum extrusion, single orange accent` |
+
+## 8. Mobility & outdoor (bike / scooter / carry accessories)
+
+**Common sense**: outdoor gear tolerates higher saturation (visibility = safety); structures may be exposed (hinges/folds as design features); integrated light language is a recent innovation goldmine for mobility devices.
+
+| Exemplar | Why canonical | Prompt phrase |
+|---|---|---|
+| VanMoof e-bike | Internal cable routing + integrated front/rear light bars: light language as brand signature | `integrated front and rear light bars in the aluminum frame` |
+| Xiaomi electric scooter | Folding geometric frame + fully hidden cables: orderliness at an entry price | `folding geometric frame, fully hidden cable routing` |
+| Peak Design carry accessories | Exposed aluminum hook + strap hardware: connection mechanisms as visual features | `exposed aluminum hook-and-strap hardware as design feature` |
+| Garmin outdoor watches | Exposed screws on metal bezel: rugged trustworthiness | `exposed screws on metal bezel, rugged tool-watch aesthetic` |
+
+## Usage rules
+
+1. **Max 1–2 anchors per concept**: anchors are "finish references", not form copies — put them in prompt layer 5 (render style); don't paste whole form descriptions into layer 2.
+2. **Cross-category migration is an innovation source**: moving category A's exemplar language into category B (e.g. mobility light language → a light ring on a wearable recorder) is the "analogy transfer" method from innovation.md; after migrating, check it against the target category's common sense.
+3. **Exemplars have cost tiers too**: Leica/Oura are premium-tier anchors. Anchoring a low-cost B2B product, take only the "design language", not the "processes" (take their formal order; land it with low-cost CMF from cost-dfm.md).
+4. **Uncovered categories**: borrow anchors from the nearest category + derive from its common sense, then add the new exemplar back into this file (iteration principle).

@@ -54,3 +54,52 @@
    `blank dark screen` 或 `minimal UI with abstract shapes, no readable text`。
 2. 机身需要 logo/丝印时，留空并在交付说明中告诉用户"丝印位已留空，可后期加"。
 3. 如果用户明确要求界面内容（如 APP 截图级保真），文字必须在后期排版工具中叠加，不靠生成。
+
+---
+
+# English Version
+
+> Used in Step 5 review. Goal: systematically eliminate "doesn't match / illogical / messy details" from results.
+
+## I. Six failure modes and fixes
+
+| # | Mode | Symptom | Fix (which prompt layer) |
+|---|---|---|---|
+| 1 | Structural hallucination | Extra buttons, screens, openings appear; button positions violate operation logic | Layer 4: name each + constrain with `exactly`, `only`, `no visible ... on the front` |
+| 2 | Proportion error | Handheld looks giant, desktop looks floaty, part size relationships defy common sense | Layers 1–2: add scale anchors: `handheld scale`, `next to a hand/laptop for scale` |
+| 3 | Physical impossibility | Floating parts without support, transparent parts without thickness, hinge in the wrong place, vents sealed shut | Layer 4: add structural-logic words: `structurally plausible, visible hinge mechanism`; then check against Section II |
+| 4 | Detail drift | Button count/position differs every round | Freeze key-structure descriptions into fixed phrases; don't touch Layer 4 during iteration |
+| 5 | Text garble | Warped pseudo-text on screens or body | All interfaces: `no readable text` / `blank screen`; leave logo areas blank for post-production |
+| 6 | Style bleed | Rounded body grows sharp vents; matte shell paired with cheap glossy parts | Back to Step 2: check the "1 primary + 1 secondary" language rule; Layer 3: max 2 materials |
+
+## II. Structural error checklist (run per image)
+
+After viewing with `ReadMediaFile`, walk this checklist:
+
+- [ ] Support: does every floating part have a connection/support logic?
+- [ ] Open/close: are hinge/slide positions of lids, flaps, drawers plausible?
+- [ ] Grip: does a handheld product have a believable load-bearing surface and grip zone?
+- [ ] Venting/sound: do speaker or heat vents on sealed shells exist and sit logically?
+- [ ] Ports: is the charging port conveniently placed (not dead-center on a load-bearing bottom face)?
+- [ ] Parting: are shell seams continuous, and do they avoid crossing surfaces that shouldn't break (e.g. a screen)?
+- [ ] Symmetry slips: symmetric products without unintended asymmetric holes/buttons (unless designed so)?
+- [ ] Counts: do named structures match the brief (one knob means one knob)?
+
+Any failure → note the exact part → add a targeted constraint to Layer 4 next round (e.g. `hinge on the top edge, lid rotates backward`).
+
+Additional wearable checks: is the fastening mechanism (clip/strap/magnet) drawn believably (no floating suspension)? Is scale plausible against a body reference (collar/wrist/shirt)? Is the light's semantics singular (light-guide slot, not a bare LED)?
+
+## III. Brief-fidelity checklist (run before delivery)
+
+- [ ] Every "must-have" structure is visible and plausibly placed
+- [ ] Every "must-not" element is absent (taboos written as prompt negations)
+- [ ] Category common sense intact (an espresso maker has a brewing logic; a dryer has an airflow logic)
+- [ ] Target-user scenario match (kids' products have no sharp edges; pro products have no toy-like colors)
+- [ ] Size magnitude correct (scene includes at least one scale reference: hand, desk, pen)
+
+## IV. Text & UI rules
+
+1. Treat any AI-generated text as garble risk. All screen/display areas in prompts read:
+   `blank dark screen` or `minimal UI with abstract shapes, no readable text`.
+2. When the body needs a logo/print, leave it blank and note in delivery: "print area left blank — can be added in post".
+3. If the user explicitly demands interface content (app-screenshot fidelity), text must be composited in a layout tool afterwards — never by generation.

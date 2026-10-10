@@ -113,3 +113,112 @@ AI 直出产品图"丑且不准"的根因是：把审美、保真、创意全部
 - "我想做个产品但说不清 / 不知道从哪里开始" → 第 1 步走 intake-questions.md 访谈剧本，逐轮选项式提问。
 - "这图不好看/不像" → 回到第 2、5 步，先诊断是方向错（审美维度低分）还是执行错（保真维度低分），再迭代。
 - "给我几个不同风格方向" → 第 2 步选 2–3 个形态语言，各出一组，再做单方向深挖。
+
+---
+
+# English Version
+
+> **Note**: This is the full English translation of the workflow above. The Chinese and English versions are equivalent — follow whichever you prefer.
+
+## Workflow (execute in order; the confirmation gate and review loops are mandatory)
+
+Ugly, off-brief AI product renders share one root cause: taste, fidelity, and creativity are all crammed into a single generation whose only adjectives are vague ("premium", "futuristic"). This skill splits them into executable steps: **direction first → structured prompts → generate → checklist-based review loops → innovation variants**.
+
+### Step 1 · Brief deconstruction
+
+**Judge brief completeness first, then choose interview or assumptions:**
+
+- **Vague description** (a sentence or two, no structure/user/cost info, or the user says "I don't know how to explain") → **run the progressive interview**: follow the script in `references/intake-questions.md` — max 3 questions per round, all multiple-choice, skip answered dimensions, give defaults when the user says "whatever". After the interview, run Steps 1.5 (open supplement) and 1.6 (confirmation gate), then move to Step 2.
+- **PRD or detailed description available** → skip the interview; deconstruct directly against the table below and list every assumption for the user to confirm.
+- **User says "stop asking, just render" at any point** → stop asking, list all default assumptions, and go straight to Step 2.
+
+| Dimension | What to capture |
+|---|---|
+| Category & function | What the product is, core function, usage scenario |
+| Target user & positioning | Consumer / pro / premium; B2B bulk purchase or C-end retail (affects business look and cost) |
+| Wear / usage mode | Handheld / desktop / wearable (for wearables: exact body location and fastening mechanism — clip / hang / strap / magnetic) |
+| Form language | 1 primary + 1 secondary direction from aesthetics.md (see Step 2) |
+| CMF | Main color, materials (matte / gloss / metal / fabric / transparent), process hints |
+| Cost & procurement | Target price tier, volume, process cost ceiling (decides injection molding vs CNC vs materials — see cost-dfm.md) |
+| Constraints | Must-keep structures (buttons, lights, ports, mic holes), size magnitude, forbidden elements |
+| Output | Aspect ratio (1:1 or 4:3 for product shots; 16:9 for scenes), quantity |
+
+### Step 1.5 · Play back + open-ended supplement (invite before finalizing)
+
+After gathering requirements, **do not jump straight to the confirmation sheet** — run a two-way correction first:
+
+1. **Play back your preliminary understanding** in 3–5 plain sentences (what it is, who uses it, key structures, the vibe) so the user can spot gaps cheaply.
+2. **Ask 1–2 open-ended questions**, then stop:
+   - General closer: "That's what I have so far. Any ideas, details, reference products, or worries I haven't asked about? Anything counts."
+   - Specific (pick one): "What matters most to you about this product?" / "Is there an existing product that feels like 'that's the vibe'? What draws you to it?"
+3. **Handle supplements**: integrate them; if they contradict earlier answers, flag the conflict and ask the user to arbitrate, then go to Step 1.6. If none: proceed to Step 1.6 without pressing.
+
+### Step 1.6 · Understanding confirmation gate (mandatory before rendering)
+
+After integrating supplements and before writing prompts or generating anything, **state the final understanding in plain, short language** and wait for confirmation. Rules:
+
+1. **Format** — ≤6 lines, no design jargon:
+   ```
+   What I understand you're making: one-sentence product definition
+   Who/where: user + scenario
+   Must have on the outside: key structure list
+   Must NOT appear: taboos (write "no particular taboos" if none)
+   The feel: one plain sentence (e.g. "a steady, unflashy tech product")
+   Cost/quantity: process tier + how many images
+   ```
+2. **Revisions**: if the user flags issues → change only those lines, re-issue the sheet, confirm again; keep other lines untouched. **No prompts and no images before confirmation passes.**
+3. **Skip condition**: only if the user explicitly says "skip confirmation, render directly".
+
+### Step 2 · Set aesthetic direction (before writing prompts)
+
+- Read `references/aesthetics.md` and pick a form language (soft minimalism / neo-futurism / retro-futurism / organic fluidity / etc.) plus tone keywords.
+- **Rule: never use empty adjectives like "beautiful / premium / high-end" in prompts — always concrete form-language vocabulary** (e.g. "seamless unibody, continuous curved surfaces, floating volume contrast"). See the vocabulary in aesthetics.md.
+- If the user provides reference images (competitors, award winners, moodboards), anchor style via the image_generation reference-image feature; otherwise open `references/design-exemplars.md`, find the product's category, and use 1–2 exemplars as benchmark anchors in prompt layer 5.
+
+### Step 3 · Build the layered prompt
+
+Assemble the prompt with the six-layer template in `references/prompt-framework.md`: subject → form & proportion → CMF → structure & details → lighting & render style → composition & camera. Notes:
+
+- Name every key structure (button count/position, screen, ports) explicitly, or the model freelances and the result won't match the brief.
+- For Chinese product contexts, demand "minimal text" or blank UI on screens to avoid garbled glyphs (see accuracy.md).
+- Change only 1–2 layers per iteration; keep the rest verbatim so effects can be attributed.
+
+### Step 4 · Generate
+
+- Call the `image_generation` plugin. Product shots: 1:1 or 4:3, single subject; scene shots: 16:9.
+- Generate 2–4 variants of the same prompt per round, pick the best base — never deliver a single image from one shot.
+- For e-commerce white-background cutouts or compositing assets, use transparent background + PNG; use opaque for people/scenes.
+
+### Step 5 · Review and iterate (mandatory, ≥2 rounds)
+
+View results with `ReadMediaFile` and score 1–5 on each dimension below, plus the failure checklist in `references/accuracy.md`. Any dimension ≤3 must be iterated:
+
+| Dimension | 5-point standard |
+|---|---|
+| Form & proportion | Memorable silhouette; category-common-sense proportions (handheld fits hands, desktop has stable mass); no distorted parts |
+| Aesthetic tone | Unified form language matching Step 2; award-level finish |
+| CMF credibility | Realistic material lighting; restrained color (≤2 main + 1 accent); plausible processes |
+| Brief fidelity | Key structures and functional cues map 1:1 to the request; no extra parts, no structural errors |
+| Innovation | Differentiated memory point within the category, without becoming unusably weird |
+
+Iterate by editing only the prompt layers behind the lowest-scoring dimension; keep every round's images and a one-line change log; show the user the "draft → final" evolution at the end.
+
+### Step 6 · Innovation variants (when the user asks for "more creative" or option comparison)
+
+Read `references/innovation.md` and generate 2–3 differentiated directions from the approved base (e.g. form reconstruction / CMF subversion / structure & interaction innovation), each iterated as its own group. Before rendering a direction, describe it to the user in words: "what this changes and why it works".
+
+## Reference index
+
+- `references/intake-questions.md` — Progressive interview script: 13 option-based questions in 5 rounds, response playbook, red-flag signals. **Required reading at Step 1 when the user is vague.**
+- `references/aesthetics.md` — Form-language system, award-winner common traits, CMF principles. **Required at Step 2.**
+- `references/design-exemplars.md` — 36 design exemplars in 8 categories with migratable prompt phrases. **Look up by category at Step 2 when no reference images.**
+- `references/prompt-framework.md` — Six-layer prompt template, per-layer phrase bank, negative-constraint library, good/bad examples. **Required at Step 3.**
+- `references/accuracy.md` — Failure modes & fixes, structural error checklist, fidelity checklist. **Required at Step 5.**
+- `references/innovation.md` — Innovation methods across form/CMF/structure/interaction. **Required at Step 6.**
+- `references/cost-dfm.md` — Process cost ladder, low-cost premium tricks, wearable-specific constraints. **Required whenever the brief involves B2B volume, cost targets, or wearables (Steps 1, 3, 5).**
+
+## Request routing
+
+- "Generate a concept render of X" → full workflow.
+- "I want to make a product but can't articulate it / don't know where to start" → Step 1 runs the intake-questions.md interview script.
+- "This render looks bad / doesn't match" → back to Steps 2 & 5: diagnose direction error (low aesthetic score) vs execution error (low fidelity score), then iterate.

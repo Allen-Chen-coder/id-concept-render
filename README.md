@@ -117,4 +117,115 @@ git clone https://github.com/Allen-Chen-coder/id-concept-render.git
 
 ---
 
-**English summary**: A universal `SKILL.md` package that fixes ugly AI-generated product concept renders. It enforces a six-step workflow — brief deconstruction with guided questions, form-language-first direction, six-layer prompt construction, batch generation, rubric-scored review loops, and structured innovation variants — backed by 36 category-sorted design exemplars, cost/DFM constraints for mass production, and a library of negative-constraint phrases. Works with any agent that loads SKILL.md skills (Kimi Work, Claude Code, Cursor, …), and with web-based AIs (Gemini, ChatGPT) by uploading the files directly.
+# English Version
+
+<div align="center">
+
+# id-concept-render
+
+**Stop AI from generating product concept renders that are ugly, off-brief, and clichéd**
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Format](https://img.shields.io/badge/format-SKILL.md-blue)](SKILL.md)
+
+</div>
+
+![banner](docs/banner.png)
+
+A universal **AI industrial design (ID) concept-rendering skill**: any agent that can load a `SKILL.md` file — Kimi, Claude Code, Cursor — gains a disciplined method for producing product concept images with taste, fidelity, and originality, instead of gambling on `beautiful, premium, 8k`.
+
+## Why you need it
+
+Text-to-render AI typically produces: **ugly** (generic aesthetics), **off-brief** (random screens and buttons), **uncreative** (template faces).
+
+The root cause is cramming taste, fidelity, and creativity into a single generation. This skill splits them into a reviewable, iterable workflow:
+
+```
+1. Brief deconstruction (guided interview for vague asks; assumptions list for detailed ones)
+2. Aesthetic direction first (form language before prompts; vague adjectives banned)
+3. Six-layer prompts (subject → form → CMF → structure → lighting → composition)
+4. Batch generation (2–4 variants, pick the best base)
+5. Rubric-scored review loops (5 dimensions + structural checklist, ≥2 rounds enforced)
+6. Innovation variants (form / CMF / structure / interaction method library)
+```
+
+## What's inside
+
+| File | Content |
+|---|---|
+| `SKILL.md` | Six-step workflow (agent entry point) |
+| `references/aesthetics.md` | 7 form languages, award-winner common traits, CMF principles |
+| `references/design-exemplars.md` | **36 design exemplars sorted into 8 product categories**, each with copy-ready prompt phrases |
+| `references/prompt-framework.md` | Six-layer prompt template + phrase bank + negative-constraint library + good/bad examples |
+| `references/accuracy.md` | Six failure modes with fixes, structural error checklist, brief-fidelity checklist |
+| `references/innovation.md` | Innovation methods across 4 layers + direction-pitch template |
+| `references/cost-dfm.md` | Process cost ladder, casing budget back-calculated from retail price, low-cost premium tricks, wearable-specific rules |
+| `references/intake-questions.md` | Progressive interview script: 13 option-based questions in 5 rounds, for users who "don't know where to start" |
+
+## Sample output
+
+Rendered in one shot with the skill's own positive example prompt (smart water bottle):
+
+![demo](docs/demo_bottle.png)
+
+## Quick start
+
+**A. One-line install for CLI agents (Codex / Claude Code / Cursor / Kimi Work)** — just send this message to the AI:
+
+> Run this command to install a skill for me: `curl -fsSL https://raw.githubusercontent.com/Allen-Chen-coder/id-concept-render/main/install.sh | bash` (on Windows PowerShell: `irm https://raw.githubusercontent.com/Allen-Chen-coder/id-concept-render/main/install.ps1 | iex`)
+
+The script auto-detects the skills directory of Kimi Work, Claude Code, or Cursor. You can also run the commands yourself in a terminal.
+
+**B. Manual install for CLI agents**
+
+```bash
+git clone https://github.com/Allen-Chen-coder/id-concept-render.git
+```
+
+Then move the folder into your AI's skills directory:
+
+| AI | Skills directory |
+|---|---|
+| Kimi Work (Windows) | `%APPDATA%\kimi-desktop\daimon-share\daimon\skills\` |
+| Kimi Work (macOS) | `~/Library/Application Support/kimi-desktop/daimon-share/daimon/skills/` |
+| Claude Code | `~/.claude/skills/` |
+| Cursor | `~/.cursor/skills/` |
+| Other agents | `~/.config/agents/skills/` or `.agents/skills/` in a project |
+
+**C. Zero-install for web AIs (Gemini / ChatGPT / Kimi web, etc.)**
+
+Web AIs can't run local commands — feed the skill files directly to them:
+
+1. **Download**: repo homepage → green `Code` button → `Download ZIP`, and unzip
+2. **Upload**: in a new chat, upload `SKILL.md` plus all 7 `.md` files under `references/` (Gemini / ChatGPT both support multi-file upload; split into two batches if needed)
+3. **Send the instruction**:
+
+   > Please read SKILL.md in full — it is your workflow manual; the 7 md files in the references folder are its supporting reference material. From now on, whenever I ask you to generate a product concept render, strictly follow the SKILL.md workflow, and draw on the reference material you have already read. Reply only "Ready" when done.
+
+4. **Then just use it**: describe your product; it will interview/confirm before generating
+
+**Pro tip (Gemini users)**: paste step 3 into a custom [Gem](https://gemini.google.com/gems) instruction to make the skill permanent — no re-upload needed.
+
+> ⚠️ Note: image generation on web AIs depends on the platform itself (Gemini can render directly; ChatGPT needs image-generation access). The review-and-iterate method works on any AI that can produce images.
+
+Then simply say:
+
+> "Generate a concept render of a [product]"
+
+Vague requests trigger the interview; detailed descriptions or PRDs go straight to deconstruction.
+
+## Highlights
+
+- 🎯 **Executable aesthetics**: a form-language vocabulary replaces empty words like `beautiful/premium`
+- 🧱 **Fidelity checklists**: name every structure + a negative-constraint library to suppress hallucinated parts
+- 💡 **Structured innovation**: the 70% familiar + 30% novel rule, with prompt-entry examples for each method
+- 💰 **Cost-aware CMF**: casing budget back-calculated from retail price — cheap doesn't have to look cheap
+- 🗂️ **Category-sorted exemplars**: 36 canonical designs to anchor style and to cross-pollinate for innovation
+
+## Contributing
+
+Contributions welcome: new category exemplars (see the "uncovered categories" rule in `references/design-exemplars.md`), new failure modes and fixes, and your usage cases. Issues and PRs are both fine.
+
+## License
+
+[MIT](LICENSE)

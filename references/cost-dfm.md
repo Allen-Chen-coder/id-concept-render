@@ -59,3 +59,58 @@
 - 点缀（仅一处）：`single small anodized aluminum button cap` / `thin aluminum accent ring`。
 - 避免写出成本毒药组合：`full aluminum unibody, CNC-machined enclosure, glass front and back`——除非用户明确高端定位。
 - 在交付说明里标注："本方案按注塑主壳 + 一处铝点缀估算，单件外壳成本在 [X] 元量级"，让审美决策和成本决策同时可见。
+
+---
+
+# English Version
+
+> Read whenever a brief involves B2B bulk purchasing, target price, cost ceilings, or wearable form factors — at Steps 1 (deconstruction), 3 (CMF/structure layers), and 5 (review). Core principle: **set the cost tier before choosing CMF — cheap doesn't have to look cheap**.
+
+## I. Process cost ladder (per-unit casing cost, volumes 1K–100K)
+
+| Process | Cost | Notes |
+|---|---|---|
+| Injection-molded PC+ABS / PC (soft-touch painted or paint-free) | Lowest | Default for B2B volume; high mold investment amortized to near-zero per unit |
+| Sheet-metal stamping + bending (aluminum/steel) | Low | Fits flat forms (badges, plates) |
+| Die-cast aluminum + sandblasted anodizing | Medium | Metallic mass feel; moderate tooling cost |
+| CNC aluminum (one-off / small batches) | High | The cost poison of mass production; use only for ≤10%-area accents (knob, ring, badge) |
+| Multi-color / overmolding | Medium-high | Great soft-grip zones but expensive molds; when cost-sensitive, use assembled TPE parts or skip |
+| Secondary processes (spray coating, plating, IML) | Additive | Every added process stacks unit cost; prefer "one-shot finish" for B2B (paint-free material + mold texture) |
+
+Rule: **the main shell always uses the bottom of the ladder; concentrate the budget on one "touch-level" premium part** (the one spot the user's fingers definitely touch: a knob, a ring, a button cap).
+
+## II. Back-calculate casing budget from retail price
+
+- Rule of thumb: hardware BOM ≈ 25%–35% of retail price (take the low end for thin-margin volume models).
+- Example: a ¥200–300 volume product → BOM ≈ ¥60–100 → casing (incl. mold amortization) is usually capped at 10%–20% of BOM, i.e. **single-digit to low-teens yuan per unit** → injection-molded main shell + at most one small metal accent is the ceiling.
+- Show users this math: if a render shows a full CNC aluminum shell, two-shot molding, and glass front+back, that image is unmanufacturable at the target tier.
+
+## III. Zero-cost ways to look premium (use proactively when rendering)
+
+1. **Mold texture**: `fine mold-textured matte finish` — fingerprint-hiding, blemish-masking, and it reads more expensive than glossy plastic. Zero cost.
+2. **Parting line as graphics**: place the mold line along a designed ring (`parting line aligned with the decorative groove`) — turn a process trace into a styling element.
+3. **Single solid color + structural light and shadow**: paint-free solid-color injection + natural highlight bands from generous radii age better than cheap spray jobs.
+4. **One metal touch point**: a single aluminum button cap or accent ring (`single anodized aluminum accent ring`) carries the whole product's "material honesty" feeling.
+5. **Hide every cheapness source**: screws hidden in snap-fits; indicator lights hidden in light-mask slots (`concealed screw, hidden snap-fit assembly`).
+
+## IV. Wearable-specific constraints (imperceptible wear)
+
+- **Weight**: clip/collar types target <20 g (about 3–4 one-yuan coins); wrist-worn <30 g. If a scale reference appears (collar, shirt, wrist), the volume must match the weight — big and thick means heavy.
+- **Fastening must be drawn believably**: clips need visible spring/bite depth/connection to the body; magnetic types need matching contacts/charging zones; straps need lugs and strap-feed logic. Never "floating suspension".
+- **Body fit**: contact surfaces are small-curvature arcs or spheres; all edges R-transitioned — no edges pressing flesh.
+- **Restrained but visible light**: status lights as "light-ring slots / light guides / translucent logo" (`breathing light glow through a thin light-guide slot`), never a bare LED bead — bare beads read cheap and harsh on business products.
+- **Acoustic/thermal openings**: mic/speaker holes need positional logic in the render (multi-mic arrays evenly along edges), hole size matched to form (arc arrays, pinhole grids).
+- **Charging**: B2B volume scenarios prefer magnetic contacts or bottom USB-C; the image must account for it.
+
+## V. B2B business-tone CMF boundaries
+
+- Safe palettes: graphite / space gray / navy / off-white + at most one accent (status-light color or brand color).
+- Taboos: high-saturation multi-color, RGB lighting (breathing lights excepted, and only single-color-temperature/single-hue), large mirror-plated areas, cartoonish corner ratios.
+- Light semantics: status-light colors ARE the status language (recording/idle/low-battery); if a render shows a light, exactly one semantic glows, the rest stay off — all-on equals no design.
+
+## VI. Expressing cost in renders (prompt phrasing)
+
+- Shell: `matte injection-molded PC+ABS shell, fine mold texture` (default for B2B volume).
+- Accent (one only): `single small anodized aluminum button cap` / `thin aluminum accent ring`.
+- Avoid cost-poison combos: `full aluminum unibody, CNC-machined enclosure, glass front and back` — unless the user explicitly positions premium.
+- In delivery notes, annotate: "This concept is estimated as injection-molded main shell + one aluminum accent; per-unit casing cost in the [X] yuan range" — make the aesthetic decision and the cost decision visible at the same time.
