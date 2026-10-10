@@ -65,9 +65,23 @@ AI 直出产品图"丑且不准"的根因是：把审美、保真、创意全部
 - **规则：提示词里禁止只写 "beautiful / premium / high-end" 这类空泛词，必须落到具体形态语言词汇**（如 "seamless unibody, continuous curved surfaces, floating volume contrast"）。词汇表见 aesthetics.md。
 - 若用户能提供参考图（竞品、获奖产品、 moodboard），用 image_generation 的参考图能力锚定风格；没有参考图时，按 `references/design-exemplars.md` 找到产品所属品类，选 1–2 个设计典范作为标杆锚点写进提示词第 5 层。
 
+### 第 2.5 步：按身份定交付物（同一流程，不同输出组合）
+
+确认闸门前先看用户是谁，交付图组按身份定制（详见 `references/use-scenarios.md`）：
+
+| 用户身份 | 默认交付图组 |
+|---|---|
+| 创业者 / 产品经理（要拿去找投资或内部汇报） | 1 张主视觉 + 1 张使用场景 + 1 张 CMF/材质特写 |
+| 电商卖家（要做上架图） | 1 张白底主图 + 2 张场景图 + 1 张尺寸参照图 |
+| 工业设计师（要做提案） | 三视角图（正/侧/45°）+ 1 张细节放大 + 1 张 CMF 板 |
+| 硬件工程师（要评估结构可行性） | 三视角图 + 1 张结构/接口细节 + 1 张佩戴/握持场景 |
+| 学生 / 爱好者 | 标准流程：主视觉 + 场景图 |
+
+在确认单第 6 行"成本/数量"处把交付图组写清楚，用户确认后即按此出图。
+
 ### 第 3 步：构建分层提示词
 
-按 `references/prompt-framework.md` 的六层模板组装提示词：主体定义 → 形态与比例 → CMF → 结构与细节 → 光影与渲染风格 → 构图与镜头。注意：
+按 `references/prompt-framework.md` 的六层模板组装提示词：主体定义 → 形态与比例 → CMF → 结构与细节 → 光影与渲染风格 → 构图与镜头。**捷径**：如果产品属于 `references/category-prompts.md` 覆盖的 12 个常见品类，直接调用该品类的骨架包填空（骨架已含品类专属的层级措辞和该品类最易翻车的结构约束），再把六层模板作为校验清单。注意：
 
 - 关键结构（按键数量位置、屏幕、接口）必须逐一点名，否则模型会自由发挥导致不像。
 - 需要中文产品语境时，界面文字一律要求 "minimal text" 或留空，避免生成乱码（见 accuracy.md）。
@@ -78,6 +92,7 @@ AI 直出产品图"丑且不准"的根因是：把审美、保真、创意全部
 - 调用 `image_generation` 插件生成。产品概念图推荐 1:1 或 4:3，单主体；需要展示使用场景时用 16:9。
 - 一次生成 2–4 张同提示词变体，先选最优底稿再迭代，不要一次只出一张就交付。
 - 需要电商白底图、贴图素材或后期合成时，用 transparent 背景 + PNG 输出；人物/场景图用 opaque。
+- 渲染类型按交付物选（预设见 prompt-framework.md 第 5 层）：主视觉/三视角用 photorealistic render；CMF 板用 clean studio render 拼图；发散早期用 marker sketch。
 
 ### 第 5 步：评审与迭代（强制，至少 2 轮）
 
@@ -100,9 +115,11 @@ AI 直出产品图"丑且不准"的根因是：把审美、保真、创意全部
 ## 参考文件索引
 
 - `references/aesthetics.md` — 形态语言体系、设计奖项共性、CMF 审美原则。**第 2 步必读**。
-- `references/design-exemplars.md` — 按产品品类分类的设计典范库（8 大品类，每类 3–5 个标杆及其可迁移提示词短语）。**第 2 步无参考图时按品类查**。
+- `references/design-exemplars.md` — 按产品品类分类的设计典范库（12 大品类，54 个标杆及其可迁移提示词短语）。**第 2 步无参考图时按品类查**。
 - `references/intake-questions.md` — 渐进式需求访谈剧本：5 轮 13 个带选项的问题、应答话术库、红旗信号。**第 1 步用户表述不清时必读**。
 - `references/prompt-framework.md` — 六层提示词模板、每层可用词汇、正反例对比。**第 3 步必读**。
+- `references/category-prompts.md` — 12 个常见品类的六层提示词骨架包（填空即用，含品类专属翻车约束）。**第 3 步捷径**。
+- `references/use-scenarios.md` — 按用户身份（创业者/电商/设计师/工程师/学生）的交付图组与快速路径。**第 2.5 步必读**。
 - `references/accuracy.md` — AI 产品图常见翻车模式与对策、保真检查清单。**第 5 步必读**。
 - `references/innovation.md` — 形态/CMF/结构/交互四个层面的创新方法库与案例。**第 6 步必读**。
 - `references/cost-dfm.md` — 工艺成本阶梯、低成本高级感手段、穿戴产品专项约束。**Brief 涉及 B端批量/成本目标或穿戴形态时必读（第 1、3、5 步）**。
@@ -111,6 +128,8 @@ AI 直出产品图"丑且不准"的根因是：把审美、保真、创意全部
 
 - "帮我生成 X 产品概念图" → 走完整流程。
 - "我想做个产品但说不清 / 不知道从哪里开始" → 第 1 步走 intake-questions.md 访谈剧本，逐轮选项式提问。
+- "我是做电商的，帮我出上架图" → 第 2.5 步按 use-scenarios.md 的电商路径出白底主图+场景图+尺寸参照。
+- "我要做提案/汇报" → 第 2.5 步按提案路径出主视觉+场景+CMF 特写。
 - "这图不好看/不像" → 回到第 2、5 步，先诊断是方向错（审美维度低分）还是执行错（保真维度低分），再迭代。
 - "给我几个不同风格方向" → 第 2 步选 2–3 个形态语言，各出一组，再做单方向深挖。
 
@@ -175,9 +194,23 @@ After integrating supplements and before writing prompts or generating anything,
 - **Rule: never use empty adjectives like "beautiful / premium / high-end" in prompts — always concrete form-language vocabulary** (e.g. "seamless unibody, continuous curved surfaces, floating volume contrast"). See the vocabulary in aesthetics.md.
 - If the user provides reference images (competitors, award winners, moodboards), anchor style via the image_generation reference-image feature; otherwise open `references/design-exemplars.md`, find the product's category, and use 1–2 exemplars as benchmark anchors in prompt layer 5.
 
+### Step 2.5 · Tailor deliverables to user identity (same workflow, different output sets)
+
+Before the confirmation gate, identify who the user is and customize the deliverable image set by identity (details in `references/use-scenarios.md`):
+
+| User identity | Default deliverable set |
+|---|---|
+| Founder / product manager (pitching to investors or reporting internally) | 1 hero shot + 1 usage scene + 1 CMF/material close-up |
+| E-commerce seller (listing images) | 1 white-background hero + 2 scene shots + 1 size-reference shot |
+| Industrial designer (proposal) | Three views (front / side / 45°) + 1 detail zoom + 1 CMF board |
+| Hardware engineer (assessing structural feasibility) | Three views + 1 structure/port detail + 1 wearing/grip scene |
+| Student / hobbyist | Standard flow: hero shot + scene shot |
+
+Write the deliverable set into line 6 ("cost/quantity") of the confirmation sheet; once confirmed, render to that set.
+
 ### Step 3 · Build the layered prompt
 
-Assemble the prompt with the six-layer template in `references/prompt-framework.md`: subject → form & proportion → CMF → structure & details → lighting & render style → composition & camera. Notes:
+Assemble the prompt with the six-layer template in `references/prompt-framework.md`: subject → form & proportion → CMF → structure & details → lighting & render style → composition & camera. **Shortcut**: if the product belongs to one of the 12 categories covered by `references/category-prompts.md`, fill in that category's skeleton pack directly (it already contains category-specific layer phrasing and the structural constraints most likely to fail in that category), then use the six-layer template as a verification checklist. Notes:
 
 - Name every key structure (button count/position, screen, ports) explicitly, or the model freelances and the result won't match the brief.
 - For Chinese product contexts, demand "minimal text" or blank UI on screens to avoid garbled glyphs (see accuracy.md).
@@ -188,6 +221,7 @@ Assemble the prompt with the six-layer template in `references/prompt-framework.
 - Call the `image_generation` plugin. Product shots: 1:1 or 4:3, single subject; scene shots: 16:9.
 - Generate 2–4 variants of the same prompt per round, pick the best base — never deliver a single image from one shot.
 - For e-commerce white-background cutouts or compositing assets, use transparent background + PNG; use opaque for people/scenes.
+- Pick the render type by deliverable (presets in prompt-framework.md layer 5): photorealistic render for hero shots and three-view sheets; clean studio render collages for CMF boards; marker sketch for early divergence.
 
 ### Step 5 · Review and iterate (mandatory, ≥2 rounds)
 
@@ -211,7 +245,9 @@ Read `references/innovation.md` and generate 2–3 differentiated directions fro
 
 - `references/intake-questions.md` — Progressive interview script: 13 option-based questions in 5 rounds, response playbook, red-flag signals. **Required reading at Step 1 when the user is vague.**
 - `references/aesthetics.md` — Form-language system, award-winner common traits, CMF principles. **Required at Step 2.**
-- `references/design-exemplars.md` — 36 design exemplars in 8 categories with migratable prompt phrases. **Look up by category at Step 2 when no reference images.**
+- `references/design-exemplars.md` — 54 design exemplars in 12 categories with migratable prompt phrases. **Look up by category at Step 2 when no reference images.**
+- `references/category-prompts.md` — Six-layer prompt skeleton packs for 12 common categories (fill-in-the-blank, with category-specific failure constraints). **Shortcut at Step 3.**
+- `references/use-scenarios.md` — Deliverable image sets and fast paths by user identity (founder / e-commerce / designer / engineer / student). **Required at Step 2.5.**
 - `references/prompt-framework.md` — Six-layer prompt template, per-layer phrase bank, negative-constraint library, good/bad examples. **Required at Step 3.**
 - `references/accuracy.md` — Failure modes & fixes, structural error checklist, fidelity checklist. **Required at Step 5.**
 - `references/innovation.md` — Innovation methods across form/CMF/structure/interaction. **Required at Step 6.**
@@ -221,4 +257,6 @@ Read `references/innovation.md` and generate 2–3 differentiated directions fro
 
 - "Generate a concept render of X" → full workflow.
 - "I want to make a product but can't articulate it / don't know where to start" → Step 1 runs the intake-questions.md interview script.
+- "I'm an e-commerce seller, make me listing images" → Step 2.5, e-commerce path in use-scenarios.md: white-background hero + scene shots + size reference.
+- "I need a proposal / deck for a pitch" → Step 2.5, proposal path: hero shot + scene + CMF close-up.
 - "This render looks bad / doesn't match" → back to Steps 2 & 5: diagnose direction error (low aesthetic score) vs execution error (low fidelity score), then iterate.

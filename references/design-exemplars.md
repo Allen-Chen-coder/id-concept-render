@@ -13,7 +13,11 @@
 - 六、医疗健康（血压计 / 体脂秤 / 助听器 / 健康监测）
 - 七、工具与仪器（测距仪 / 万用表 / 电动工具 / 相机）
 - 八、出行与户外（自行车 / 滑板车 / 背包配件）
-- 九、使用规则
+- 九、母婴与儿童（辅食机 / 监测器 / 儿童音频）
+- 十、宠物用品（喂食器 / 饮水机 / 定位器）
+- 十一、美妆与香氛（美容仪 / 美发工具 / 香薰）
+- 十二、厨房与清洁电器（厨师机 / 吸尘器 / 扫地机）
+- 十三、使用规则
 
 ## 一、穿戴与随身设备
 
@@ -109,7 +113,51 @@
 | Peak Design 背包配件 | 铝钩 + 织带的机构外露：把连接机构做成视觉特征 | `exposed aluminum hook-and-strap hardware as design feature` |
 | Garmin 户外表 | 金属表圈 + 螺钉外露：粗犷的可信感 | `exposed screws on metal bezel, rugged tool-watch aesthetic` |
 
-## 九、使用规则
+## 九、母婴与儿童
+
+**品类常识**：零锐角是硬约束；食品接触面要明示材质（ gloss 内壁）；配色偏奶油白/鼠尾草绿/雾粉；一体感强（少分件 = 安全感）；单手可操作。
+
+| 典范 | 为什么是典范 | 提示词迁移短语 |
+|---|---|---|
+| Beaba Babycook 辅食机 | 一体成型的圆润白罐 + 单手开盖：把"婴儿安全"翻译成形态语言 | `one-piece rounded white pod, single-hand lid, zero sharp edges` |
+| Tonies Box 儿童音箱 | 软包织物机身 + 人偶交互：材质先行表达"可以摔" | `soft fabric-wrapped speaker, character-figure interaction` |
+| Cubo AI 婴儿监视器 | 无棱角"鸟屋"形态 + 木质支架：监控设备去冷冰冰化 | `friendly birdhouse-like camera, wooden stand, no harsh geometry` |
+| Braun 耳温枪 | 柔和的家用医疗：圆角 + 明确的探头-握柄分区 | `soft-rounded home medical, clear probe-and-grip zoning` |
+
+## 十、宠物用品
+
+**品类常识**：防打翻（低重心）与防啃咬（无棱）是两条硬线；食品/水位要可见（透明窗是品类惯例）；色调用中性色+一点暖色点缀；允许比消费电子更俏皮的形态。
+
+| 典范 | 为什么是典范 | 提示词迁移短语 |
+|---|---|---|
+| PETKIT 智能喂食器 | 极简白机身 + 半透明粮窗：把"余粮可见"做成设计语言 | `minimal white body, translucent food-level window` |
+| Whistle 宠物定位器 | 胶囊形挂坠模块：从"电子项圈"变成配饰 | `capsule-shaped tracker module on collar, accessory-like` |
+| Fable 宠物用品系列 | 原木+织物+金属的系统化：宠物用品的 MUJI 化 | `natural wood, woven fabric and matte metal system` |
+| 宠物饮水机（循环活水类） | 流动水流+低位宽口：功能可见化的饮水设计 | `visible circulating water flow, wide low drinking basin` |
+
+## 十一、美妆与香氛
+
+**品类常识**：允许品类内最丰富的 CMF 表达（硅胶/玻璃/金属/陶瓷）；"洁净感"与"仪式感"是两条主线；小型手持件靠材质碰撞出高级感；香氛类讲究光影氛围。
+
+| 典范 | 为什么是典范 | 提示词迁移短语 |
+|---|---|---|
+| FOREO Luna 洁面仪 | 医用硅胶卵石 + 高饱和色：材质本身成为品牌 | `medical-grade silicone pebble, vivid monochromatic color` |
+| Dyson Airwrap 美发系列 | 马鞍形主机 + 配件体系：把工程感带入美妆 | `ergonomic saddle-grip body, engineered accessory ecosystem` |
+| Diptyque 香薰蜡烛 | 玻璃罐 + 标志性标签 + 火焰氛围：容器即品牌画布 | `minimal glass vessel, iconic label, warm candlelight glow` |
+| GHD 直发器 | 哑光黑单体 + 圆润夹板：专业工具的女性化克制 | `matte black monolith, rounded plates, professional restraint` |
+
+## 十二、厨房与清洁电器
+
+**品类常识**：功能路径可见（尘杯/水箱/蒸汽口）是高级感的来源；允许复古弧线（厨师机）或工程透明（吸尘器）两种路线；大体积产品靠材质分割减重感。
+
+| 典范 | 为什么是典范 | 提示词迁移短语 |
+|---|---|---|
+| KitchenAid 厨师机 | 复古弧线铸锌机身 + 色釉：一个形态卖几十年 | `retro curved die-cast body, glossy enamel colorway` |
+| Dyson 无线吸尘器 | 透明尘杯 + 气旋单元外露：功能可见化的极致 | `transparent dustbin, exposed cyclone assembly` |
+| Roborock 扫地机器人 | 简洁圆盘 + 雷达塔收敛：把传感器收进形态 | `clean disc form, recessed LiDAR tower` |
+| simplehuman 垃圾桶 | 极简不锈钢 + 隐藏机构：清洁用品的去工具化 | `minimal stainless cylinder, mechanism fully hidden` |
+
+## 十三、使用规则
 
 1. **每案限锚 1–2 个典范**：锚点是"完成度参照"而非"形态复制"，写在提示词第 5 层（渲染风格层），不要整段抄形态描述进第 2 层。
 2. **跨品类迁移是创新来源**：把 A 品类的典范语言迁到 B 品类（如把出行设备的灯语迁移到随身录音设备的光环缝），就是 innovation.md 的"类比迁移"法，迁移后要过一遍品类常识约束。
@@ -216,6 +264,50 @@
 | Xiaomi electric scooter | Folding geometric frame + fully hidden cables: orderliness at an entry price | `folding geometric frame, fully hidden cable routing` |
 | Peak Design carry accessories | Exposed aluminum hook + strap hardware: connection mechanisms as visual features | `exposed aluminum hook-and-strap hardware as design feature` |
 | Garmin outdoor watches | Exposed screws on metal bezel: rugged trustworthiness | `exposed screws on metal bezel, rugged tool-watch aesthetic` |
+
+## 9. Baby & kids
+
+**Common sense**: zero sharp corners is a hard constraint; food-contact surfaces must signal material (glossy inner wall); colorways lean cream-white / sage-green / misty-pink; strong one-piece feel (fewer parts = perceived safety); single-hand operation.
+
+| Exemplar | Why canonical | Prompt phrase |
+|---|---|---|
+| Beaba Babycook | One-piece rounded white pod + single-hand lid: "baby-safe" translated into form language | `one-piece rounded white pod, single-hand lid, zero sharp edges` |
+| Tonies Box kids speaker | Fabric-wrapped soft body + character-figure interaction: material-first "drop-proof" expression | `soft fabric-wrapped speaker, character-figure interaction` |
+| Cubo AI baby monitor | Corner-free "birdhouse" form + wooden stand: de-coldifying a monitoring device | `friendly birdhouse-like camera, wooden stand, no harsh geometry` |
+| Braun ear thermometer | Soft home-medical: rounded corners + clear probe-and-grip zoning | `soft-rounded home medical, clear probe-and-grip zoning` |
+
+## 10. Pet products
+
+**Common sense**: anti-tip (low center of gravity) and chew-proof (no sharp edges) are two hard lines; food/water level must be visible (translucent window is a category convention); neutral colors with one warm accent; playfuller forms allowed than in consumer electronics.
+
+| Exemplar | Why canonical | Prompt phrase |
+|---|---|---|
+| PETKIT smart feeder | Minimal white body + translucent food window: "remaining food visible" as design language | `minimal white body, translucent food-level window` |
+| Whistle pet tracker | Capsule-shaped pendant module: from "electronic collar" to accessory | `capsule-shaped tracker module on collar, accessory-like` |
+| Fable pet collection | Systematic wood + woven fabric + matte metal: the MUJI-ization of pet products | `natural wood, woven fabric and matte metal system` |
+| Pet water fountain (circulating type) | Visible flowing water + wide low basin: function-made-visible drinking design | `visible circulating water flow, wide low drinking basin` |
+
+## 11. Beauty & fragrance
+
+**Common sense**: the richest CMF expression within any category (silicone / glass / metal / ceramic); "cleanliness" and "ritual" are the two main lines; small handheld pieces achieve premium feel through material collision; fragrance leans on light-and-shadow atmosphere.
+
+| Exemplar | Why canonical | Prompt phrase |
+|---|---|---|
+| FOREO Luna | Medical-grade silicone pebble + vivid color: the material itself becomes the brand | `medical-grade silicone pebble, vivid monochromatic color` |
+| Dyson Airwrap | Saddle-grip body + accessory ecosystem: engineering brought into beauty | `ergonomic saddle-grip body, engineered accessory ecosystem` |
+| Diptyque candle | Glass vessel + iconic label + flame glow: the container as brand canvas | `minimal glass vessel, iconic label, warm candlelight glow` |
+| GHD styler | Matte black monolith + rounded plates: professional restraint with feminine softness | `matte black monolith, rounded plates, professional restraint` |
+
+## 12. Kitchen & cleaning appliances
+
+**Common sense**: visible function path (dust cup / water tank / steam vent) is the source of premium feel; two routes allowed — retro curves (stand mixer) or engineering-transparency (vacuum); large products reduce visual weight via material segmentation.
+
+| Exemplar | Why canonical | Prompt phrase |
+|---|---|---|
+| KitchenAid stand mixer | Retro curved die-cast body + glossy enamel: one form selling for decades | `retro curved die-cast body, glossy enamel colorway` |
+| Dyson cordless vacuum | Transparent dustbin + exposed cyclone: the extreme of function-made-visible | `transparent dustbin, exposed cyclone assembly` |
+| Roborock robot vacuum | Clean disc form + recessed LiDAR tower: sensors absorbed into the form | `clean disc form, recessed LiDAR tower` |
+| simplehuman trash can | Minimal stainless cylinder + fully hidden mechanism: de-tooling a cleaning product | `minimal stainless cylinder, mechanism fully hidden` |
 
 ## Usage rules
 

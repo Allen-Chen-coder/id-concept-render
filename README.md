@@ -34,7 +34,9 @@
 |---|---|
 | `SKILL.md` | 六步工作流主文件（Agent 加载入口） |
 | `references/aesthetics.md` | 7 种形态语言体系、设计奖项共性、CMF 审美原则 |
-| `references/design-exemplars.md` | **按 8 大品类分类的 36 个设计典范**（每类附可直接迁移的提示词短语） |
+| `references/design-exemplars.md` | **按 12 大品类分类的 54 个设计典范**（每类附可直接迁移的提示词短语） |
+| `references/category-prompts.md` | **12 个常见品类的六层提示词骨架包**：填空即用，含各品类专属翻车约束 |
+| `references/use-scenarios.md` | 按用户身份（创业者/电商/设计师/工程师/学生）定制的交付图组与快速路径 |
 | `references/prompt-framework.md` | 六层提示词模板 + 词汇速查 + 否定约束短语库 + 正反例对比 |
 | `references/accuracy.md` | 六类翻车模式对策、结构错误强检清单、保真清单 |
 | `references/innovation.md` | 四层面创新方法库 + 方向描述模板 |
@@ -82,10 +84,10 @@ git clone https://github.com/Allen-Chen-coder/id-concept-render.git
 网页 AI 不能跑本地命令，直接把 skill 文件喂给它：
 
 1. **下载**：仓库首页 → 绿色 `Code` 按钮 → `Download ZIP`，解压得到 `id-concept-render-main` 文件夹
-2. **上传**：新开一个对话，把 `SKILL.md` 和 `references/` 下的全部 7 个 `.md` 文件一起上传（Gemini / ChatGPT 都支持多文件上传；文件太多可分两批）
+2. **上传**：新开一个对话，把 `SKILL.md` 和 `references/` 下的全部 9 个 `.md` 文件一起上传（Gemini / ChatGPT 都支持多文件上传；文件太多可分两批）
 3. **发指令**：
 
-   > 请完整阅读 SKILL.md，它是你的工作流程说明书；references 文件夹里的 7 个 md 是它的配套参考资料。从现在起，我让你生成产品概念渲染图时，请严格按 SKILL.md 的流程执行，需要参考资料时优先从你已读到的内容里取。读完请只回复"已就绪"。
+   > 请完整阅读 SKILL.md，它是你的工作流程说明书；references 文件夹里的 9 个 md 是它的配套参考资料。从现在起，我让你生成产品概念渲染图时，请严格按 SKILL.md 的流程执行，需要参考资料时优先从你已读到的内容里取。读完请只回复"已就绪"。
 
 4. **之后正常使用**：直接描述你的产品需求即可，它会先走提问/确认流程再出图
 
@@ -105,7 +107,9 @@ git clone https://github.com/Allen-Chen-coder/id-concept-render.git
 - 🧱 **保真有清单**：结构逐一点名 + 否定约束短语库，抑制乱加屏幕按键的结构幻觉
 - 💡 **创新有方法**：70% 熟悉 + 30% 陌生的边界规则，四层面创新方法各配提示词切入示例
 - 💰 **成本有档位**：批量生产场景按售价倒推外壳预算，低成本不等于廉价（蚀纹/分型线/单点金属）
-- 🗂️ **品类有典范**：36 个公认设计标杆按品类归档，跨品类迁移即创新来源
+- 🗂️ **品类有典范**：54 个公认设计标杆按 12 大品类归档，跨品类迁移即创新来源
+- 📦 **骨架填空即用**：12 个品类提示词骨架包 + 品类专属翻车约束，不出"像谁"的问题
+- 👤 **按身份交付**：创业者、电商卖家、设计师、工程师、学生各有定制图组，出的每一张图都有用途
 
 ## 贡献
 
@@ -155,7 +159,9 @@ The root cause is cramming taste, fidelity, and creativity into a single generat
 |---|---|
 | `SKILL.md` | Six-step workflow (agent entry point) |
 | `references/aesthetics.md` | 7 form languages, award-winner common traits, CMF principles |
-| `references/design-exemplars.md` | **36 design exemplars sorted into 8 product categories**, each with copy-ready prompt phrases |
+| `references/design-exemplars.md` | **54 design exemplars sorted into 12 product categories**, each with copy-ready prompt phrases |
+| `references/category-prompts.md` | **Six-layer prompt skeleton packs for 12 common categories** — fill-in-the-blank, with category-specific failure constraints |
+| `references/use-scenarios.md` | Deliverable image sets and fast paths tailored to user identity (founder / e-commerce / designer / engineer / student) |
 | `references/prompt-framework.md` | Six-layer prompt template + phrase bank + negative-constraint library + good/bad examples |
 | `references/accuracy.md` | Six failure modes with fixes, structural error checklist, brief-fidelity checklist |
 | `references/innovation.md` | Innovation methods across 4 layers + direction-pitch template |
@@ -197,10 +203,10 @@ Then move the folder into your AI's skills directory:
 Web AIs can't run local commands — feed the skill files directly to them:
 
 1. **Download**: repo homepage → green `Code` button → `Download ZIP`, and unzip
-2. **Upload**: in a new chat, upload `SKILL.md` plus all 7 `.md` files under `references/` (Gemini / ChatGPT both support multi-file upload; split into two batches if needed)
+2. **Upload**: in a new chat, upload `SKILL.md` plus all 9 `.md` files under `references/` (Gemini / ChatGPT both support multi-file upload; split into two batches if needed)
 3. **Send the instruction**:
 
-   > Please read SKILL.md in full — it is your workflow manual; the 7 md files in the references folder are its supporting reference material. From now on, whenever I ask you to generate a product concept render, strictly follow the SKILL.md workflow, and draw on the reference material you have already read. Reply only "Ready" when done.
+   > Please read SKILL.md in full — it is your workflow manual; the 9 md files in the references folder are its supporting reference material. From now on, whenever I ask you to generate a product concept render, strictly follow the SKILL.md workflow, and draw on the reference material you have already read. Reply only "Ready" when done.
 
 4. **Then just use it**: describe your product; it will interview/confirm before generating
 
@@ -220,7 +226,9 @@ Vague requests trigger the interview; detailed descriptions or PRDs go straight 
 - 🧱 **Fidelity checklists**: name every structure + a negative-constraint library to suppress hallucinated parts
 - 💡 **Structured innovation**: the 70% familiar + 30% novel rule, with prompt-entry examples for each method
 - 💰 **Cost-aware CMF**: casing budget back-calculated from retail price — cheap doesn't have to look cheap
-- 🗂️ **Category-sorted exemplars**: 36 canonical designs to anchor style and to cross-pollinate for innovation
+- 🗂️ **Category-sorted exemplars**: 54 canonical designs across 12 categories to anchor style and to cross-pollinate for innovation
+- 📦 **Fill-in-the-blank skeletons**: 12 category prompt packs with category-specific failure constraints — no more "looks like someone else's"
+- 👤 **Identity-tailored deliverables**: founders, e-commerce sellers, designers, engineers, and students each get a purpose-built image set — every render earns its place
 
 ## Contributing
 
